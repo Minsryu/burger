@@ -1,0 +1,57 @@
+
+<h2>Need to eat!</h2>
+
+{{#each eatList}}
+	<li>{{this.id}} {{this.burger_name}}</li>
+	<button burger-id="{{this.id}}"  class="yumyum">devoured!!</button>
+{{/each}}
+
+<h2>Yum Yum Yummed!</h2>
+
+{{#each yumList}}
+	<li>{{this.id}} {{this.burger_name}}</li>
+{{/each}}
+
+<form id="create-burger" class = "button-size">
+	<textarea type="text" id="burger-input"></textarea>
+	<button type="submit">Save Burger!</button>
+</form>
+
+<script type="text/javascript">
+	
+	$("#create-burger").on("submit",function(event){
+		event.preventDefault();
+
+		var newBurger = {
+			burger: $("#burger-input").val().trim()
+		}
+
+		$.ajax("/api/create",{
+			type:"POST",
+			data:newBurger
+		}).then(
+			function(){
+				console.log("burger Added!");
+				location.reload();
+			}
+		);
+	});
+
+	$(".yumyum").on("click",function(event){
+		console.log($(this).attr("burger-id"));
+		var changeStatus = {
+			burgerId: $(this).attr("burger-id")
+		}
+
+		$.ajax("api/update",{
+			type:"PUT",
+			data: changeStatus
+		}).then(
+			function(){
+				console.log("burger YUM YUM YUMMED!");
+				location.reload();
+			}
+		)
+	})
+
+</script>
