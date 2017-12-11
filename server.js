@@ -8,6 +8,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static("public"));
 
 var orm = require("./config/orm.js");
 

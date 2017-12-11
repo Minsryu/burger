@@ -1,21 +1,37 @@
+<div id="header">
+	<h1>My Burger List!</h1>
+	<img src="/assets/img/burger.png">
 
-<h2>Need to eat!</h2>
+</div>
 
-{{#each eatList}}
-	<li>{{this.id}} {{this.burger_name}}</li>
-	<button burger-id="{{this.id}}"  class="yumyum">devoured!!</button>
-{{/each}}
+<div id="content">
+	<div id="left-content">
+		<h2>Need to eat!</h2>
 
-<h2>Yum Yum Yummed!</h2>
+		{{#each eatList}}
+			<li>{{this.id}}. {{this.burger_name}} <button burger-id="{{this.id}}"  class="yumyum">devoured!!</button></li>
+			
+		{{/each}}
 
-{{#each yumList}}
-	<li>{{this.id}} {{this.burger_name}}</li>
-{{/each}}
+	</div>
 
-<form id="create-burger" class = "button-size">
-	<textarea type="text" id="burger-input"></textarea>
-	<button type="submit">Save Burger!</button>
-</form>
+	<div id="right-content">
+		<h2>Yum Yum Yummed!</h2>
+
+		{{#each yumList}}
+			<li>{{this.id}} {{this.burger_name}}</li>
+		{{/each}}
+	</div>
+
+</div>
+
+<div id="form">
+	<h2>Add burger to eat!</h2>
+	<form id="create-burger" class = "button-size">
+		<textarea type="text" id="burger-input"></textarea>
+		<button type="submit">Save Burger!</button>
+	</form>
+</div>
 
 <script type="text/javascript">
 	

@@ -1,0 +1,65 @@
+*{
+	box-sizing: border-box;
+	margin: 0px auto;
+	max-width: 640px;
+
+}
+body{
+	background-color: #fceb88;
+}
+#header{
+	width: 640px;
+	clear: both; 
+	padding: 0px auto;
+	text-align: center;
+
+}
+
+li button{
+	width: 100px;
+	height:25px;
+	border-radius: 5px;
+	float: right;
+	margin: auto 0px;
+}
+
+li {
+	margin: 20px 0;
+	list-style-type: none;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	padding: 10px 5px;
+}
+
+img {
+	width: 150px;
+	margin: 0px auto;
+}
+
+h2{
+	text-align: center;
+}
+
+#left-content {
+	width: 300px;
+	float: left;
+}
+
+#right-content {
+	width: 300px;
+	float: right;
+}
+
+#form {
+	width: 640px;
+	clear: both; 
+	padding: 30px;
+}
+
+#burger-input{
+	width: 400px;
+	height: 50px;
+}
+
+
